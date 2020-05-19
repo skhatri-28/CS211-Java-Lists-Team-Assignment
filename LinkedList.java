@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-public class LinkedList<E> implements List<E> {
+public class LinkedList<E> extends AbstractList<E> {
     private ListNode<E> front;  // first value in the list
     private ListNode<E> back;   // last value in the list
     private int size;           // current number of elements
@@ -25,48 +25,6 @@ public class LinkedList<E> implements List<E> {
         checkIndex(index);
         ListNode<E> current = nodeAt(index);
         return current.data;
-    }
-
-    // post: creates a comma-separated, bracketed version of the list
-    public String toString() {
-        if (size == 0) {
-            return "[]";
-        } else {
-            String result = "[" + front.next.data;
-            ListNode<E> current = front.next.next;
-            while (current != back) {
-                result += ", " + current.data;
-                current = current.next;
-            }
-            result += "]";
-            return result;
-        }
-    }
-
-    // post : returns the position of the first occurrence of the given
-    //        value (-1 if not found)
-    public int indexOf(E value) {
-        int index = 0;
-        ListNode<E> current = front.next;
-        while (current !=  back) {
-            if (current.data.equals(value)) {
-                return index;
-            }
-            index++;
-            current = current.next;
-        }
-        return -1;
-    }
-
-    // post: returns true if list is empty, false otherwise
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    // post: returns true if the given value is contained in the list,
-    //       false otherwise
-    public boolean contains(E value) {
-        return indexOf(value) >= 0;
     }
 
     // post: appends the given value to the end of the list
