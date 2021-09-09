@@ -3,5 +3,5 @@
 Implementation of ArrayList and LinkedList data structures using an abstract superclass to factor out common methods between the two list types. 
 
 ### Contributors
-*Safwaan Taher
-*Youssef Ben Taleb
+* Safwaan Taher
+* Youssef Ben Taleb
